@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title%}
+  Home
+{% endblock %}
+
+{% block content %}
+  <font color="black"><h1 class="center">WELCOME TO MY QUIZ</h1></font>
+  <font color="red"><h2>Select the catagory to begin with</h2></font>
+  {% for choice in choices %}
+  <div class="row">
+    <div class="col-md-4">
+      <a href="/quiz/{{ choice.0 }}"><h3>{{ choice.1 }}</h3></a>
+    </div>
+
+  </div>
+  {% endfor %}
+  <!--
+<form name="form1" action="" method="POST">
+  {% csrf_token %}
+Enter Email ID : <input type="name" name="emailID" value="emailID">
+<input type="submit" value="OK">
+</form> 
+  -->
+{% endblock %}
+
